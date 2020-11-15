@@ -20,10 +20,12 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
+
 .header {
     background-color: #000000;
     font-family: "Pathway Gothic One", sans-serif;
     padding: 16px; 
+    padding-bottom: 0px;
 }
 
     .header .wrapper {
@@ -34,71 +36,69 @@ body {
 
 .logo-header {
     width: 100px;
+    margin-bottom: 17px;
 }
 
-
-    
 .nav-list {
     list-style-type: none;
     padding-left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
+
 .nav-list-item + .nav-list-item {
     margin-top: 32px;
 }
-
-
 
 .nav-link {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 24px;
-    /*width: 100%;
-    padding: 24px 16px;
-    font-weight: 500;*/
 }
 
     .nav-link:hover,
     .nav-link:focus {
-        background-color: #232425;
-        padding-top: 5px;
-        padding-bottom: 10px;
+        background-color: rgba(255, 255, 255, 0.25);
+        padding-top: 16px;
+        padding-bottom: 16px;
     }
 
-    .nav-link:active {
-        background-color: rgba(255, 255, 255, 0.25);
-       
-    }
+.nav-link-active {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
 
 @media screen and (min-width: 768px) {
     .header .wrapper {
         flex-direction: row;
         justify-content: space-between;
     }
-
+    
     .nav-list {
         flex-direction: row;
     }
+    
     .nav-list-item + .nav-list-item {
         margin-left: 32px;
     }
-
+    
     .nav-list-item + .nav-list-item {
         margin-top: unset;
     }
-
 }
+
 
 .home-section {
     display: grid;
-    grid-template-columns: 1fr; /* on peut m�me enlever cette ligne, car c'est le comportement par d�faut d'un �l�ment utilisant `display: grid` */
+    grid-template-columns: 1fr; /* on peut même enlever cette ligne, car c'est le comportement par défaut d'un élément utilisant `display: grid` */
     align-items: center;
     overflow: hidden;
 }
+
 .img-veloBleu {
     display: block;
     max-width: 100%;
@@ -109,6 +109,7 @@ body {
         object-fit: cover;
         object-position: 50% 0;
     }
+
 .titre-H {
     text-align: center;
     color: black;
@@ -130,9 +131,11 @@ body {
         grid-template-columns: repeat(2,1fr);
         grid-gap: 0px;
     }
+    
     .img-veloBleu {
         Height :499px;
     }
+    
     .titre-H {
         font-size: 48px;
         padding-right: 64px;
@@ -140,6 +143,7 @@ body {
         text-align: left;
     }
 }
+
 
 /* Affichage Ordinateur*/
 @media screen and (min-width: 1280px) {
@@ -246,113 +250,109 @@ body {
     display: none;
 }
 
-    /*Affichage Tablette*/
-    @media screen and (min-width: 768px) {
-        .frame .titre-H {
-            font-size: 36px;
-            text-align: left;
-            margin-top: 0px;
 
-        }
+/*Affichage Tablette*/
+@media screen and (min-width: 768px) {
+    .frame .titre-H {
+        font-size: 36px;
+        text-align: left;
+        margin-top: 0px;
 
-        .boite1 {
-            display: grid;
-            overflow: hidden;
-            height: 288px;
-            width: auto;
-            grid-template-columns: 33% 33% 33%;
-            grid-auto-rows: minmax(100px, auto);
-            grid-template-areas: "titre titre garcon" "para para garcon" "bout . garcon";
-        }
-
-        .index-paragraph {
-            padding-bottom: 0px;
-           /* padding-top :12px;
-            margin-top: 12px;*/
-        }
-
-        .boite1 .titre-H {
-            grid-area: titre;
-            padding-right: 118px;
-            padding-left : 22px;
-           margin-bottom: 0px;
-        }
-
-        .boite1 .index-paragraph {
-            grid-area: para;
-            padding-left : 22px;
-        }
-
-        .boite1 .button-blanc {
-            grid-area: bout;
-            margin-left: 34px;
-        }
-
-        .img-garcon {
-            display: block;
-            object-fit: cover;
-            width: 100%;
-            height: 100%
-        }
-
-        .boite1 .img-garcon {
-            grid-area: garcon;
-            
-        }
-
-        .boite2 {
-            display: grid;
-            overflow: hidden;
-            Height: 312px;
-            width:auto;
-            grid-template-columns: 33% 33% 33%;
-            grid-auto-rows: minmax(1fr, 1fr);
-            grid-template-areas: "veloB titre2 titre2" "veloB para2 para2" "veloB bout2 .";
-        }
-
-            .boite2 .titre-H {
-                grid-area: titre2;
-                padding-right: 26px;
-                margin-bottom: 0px;
-            }
-
-            .boite2 .index-paragraph {
-                grid-area: para2;
-                padding-right: 24px;
-                margin-bottom: 0px;
-            }
-
-            .boite2 .button-bleu {
-                grid-area: bout2;
-                margin-left: 26px;
-               margin-top: 15px;
-                margin-bottom: 24px;
-               
-            }
-
-
-        .img-veloBlanc {
-            display: block;
-            object-fit: cover;
-            width: 100%;
-            height: 100%
-        }
-
-        .boite2 .img-veloBlanc {
-            grid-area: veloB;
-        }
     }
+
+    .boite1 {
+        display: grid;
+        overflow: hidden;
+        height: 288px;
+        width: auto;
+        grid-template-columns: 33% 33% 33%;
+        grid-auto-rows: minmax(1fr, 1fr);
+        grid-template-areas: "titre titre garcon" "para para garcon" "bout . garcon";
+    }
+
+    .index-paragraph {
+        padding-bottom: 0px;
+     }
+
+     .boite1 .titre-H {
+         grid-area: titre;
+         padding-right: 118px;
+         padding-left : 22px;
+         margin-bottom: 0px;
+     }
+
+     .boite1 .index-paragraph {
+         grid-area: para;
+         padding-left : 22px;
+         margin-top: 0px;
+     }
+
+    .boite1 .button-blanc {
+        grid-area: bout;
+        margin-left: 34px;
+    }
+
+    .img-garcon {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .boite1 .img-garcon {
+        grid-area: garcon;   
+    }
+
+   .boite2 {
+       display: grid;
+       overflow: hidden;
+       Height: 312px;
+       width:auto;
+       grid-template-columns: 33% 33% 33%;
+       grid-auto-rows: minmax(1fr, 1fr);
+       grid-template-areas: "veloB titre2 titre2" "veloB para2 para2" "veloB bout2 .";
+   }
+   .boite2 .titre-H {
+       grid-area: titre2;
+       padding-right: 26px;
+       margin-bottom: 0px;
+   }
+
+   .boite2 .index-paragraph {
+       grid-area: para2;
+       padding-right: 24px;
+       margin-bottom: 0px;
+   }
+
+   .boite2 .button-bleu {
+       grid-area: bout2;
+       margin-left: 26px;
+       margin-top: 15px;
+    }
+    
+    .img-veloBlanc {
+       display: block;
+       object-fit: cover;
+       width: 100%;
+       height: 100%
+    }
+
+    .boite2 .img-veloBlanc {
+       grid-area: veloB;
+    }
+}
+
 
 /* Affichage Ordinateur*/
 @media screen and (min-width: 1280px) {
     .boite1 .titre-H {
         padding-left: 34px;
-        margin-bottom: 0px;
+        margin-bottom: 24px;
     }
     .boite1 .index-paragraph {
         padding-top: 0px;
         margin-top: 0px;
-        margin-bottom: 0px;
+        margin-bottom: 32px;
     }
 
     .boite1 .button-blanc {
@@ -380,93 +380,100 @@ body {
 
     .boite2 .index-paragraph {
         padding-right: 32px;
+        margin-top: 0px;
+        margin-bottom: 32px;
     }
 
     .boite2 .titre-H {
         padding-right: 34px;
+        margin-bottom: 24px;
     }
 
     .boite2 .button-bleu {
         margin-left: 34px;
+        margin-bottom: 32px;
     }
 }
 
 
-    .frame-img-background {
-        background-image: url("img/home/home-04.jpg");
-        background-position: bottom;
-        background-repeat: no-repeat;
-        background-color: black;
-        display: grid;
-        flex-direction: column;
-        padding-left: 20px;
+.frame-img-background {
+    background-image: url("img/home/home-04.jpg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: black;
+    display: grid;
+    padding-left: 20px;
     }
 
-    .item-service {
-        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-        border-radius: 4px;
-        overflow: hidden;
-    }
+.item-service {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+}
 
-    .titre-services {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        color: white;
-        font-weight: 500;
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
+.titre-services {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 
-    .paragraphe-services {
-        color: white;
-        font-weight: 400;
-        margin-top: 0px;
-        padding-bottom: 50px;
-        padding-right: 19px;
-    }
+.paragraphe-services {
+    color: white;
+    font-weight: 400;
+    margin-top: 0px;
+    padding-bottom: 50px;
+    padding-right: 19px;
+    margin-bottom: 0px;
+}
 
         .paragraphe-services:last-child {
             padding-bottom: 64px;
         }
 
-    .img-services {
-        padding-top: 0px;
-        padding-bottom: 20px;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.6);
-        width: 64px;
-    }
+.img-services {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    width: 64px;
+}
 
 .frame-img-background .button-bleu {
     margin-bottom: 24px;
 }
 
 
-    @media screen and (min-width: 768px) {
-        .frame-img-background {
-            background-position: top;
-            
-        }
-
-        .item-service {
-            display: grid;
-            grid-template-columns: 50% 50%;
-        }
+/*Affichage Tablette*/
+@media screen and (min-width: 768px) {
+    .frame-img-background {
+        background-position: top;   
     }
-
-    @media screen and (min-width: 1280px) {
-        .item-service {
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-    }
-
-    .frame-img {
+    
+    .item-service {
         display: grid;
-        grid-template-columns: 1fr;
-        align-items: center;
-        overflow: hidden;
-        background-color: white;
-        grid-gap: 24px;
+        grid-template-columns: 50% 50%;
+        }
     }
+
+
+/*Affichage Ordi */
+@media screen and (min-width: 1280px) {
+    .item-service {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+.frame-img {
+     display: grid;
+     grid-template-columns: 1fr;
+     align-items: center;
+     overflow: hidden;
+     background-color: white;
+     grid-gap: 24px;
+}
 
         .frame-img .img-fin {
             object-fit: cover;
@@ -475,73 +482,73 @@ body {
             Height: 250px;
         }
 
-    .img-fin {
-        display: block;
+.img-fin {
+    display: block;
+}
+
+.grid-img-fin {
+    padding-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-img-fin:first-child {
+    padding-top: 64px;
+}
+
+    .grid-img-fin:last-child {
+        padding-bottom: 70px;
     }
 
-    .grid-img-fin {
-        padding-bottom: 24px;
-        margin-left: auto;
-        margin-right: auto;
+
+/*Affichage tablette */
+@media screen and (min-width: 768px) {
+    .frame-img {
+        grid-template-columns: 1fr 1fr 1fr;
     }
-
-        .grid-img-fin:first-child {
-            padding-top: 64px;
-        }
-
-        .grid-img-fin:last-child {
-            padding-bottom: 70px;
-        }
-
-    /*Affichage tablette */
-    @media screen and (min-width: 768px) {
-        .frame-img {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-
-        .grid-img-fin {
-            padding-top: 32px;
-            padding-bottom: 31px;
-        }
-
-            .grid-img-fin:first-child {
-                padding-top: 32px;
-                margin-left: 32px;
-            }
-
-            .grid-img-fin:last-child {
-                padding-bottom: 31px;
-                margin-right: 33px;
-            }
-
         .frame-img .img-fin {
             Width: 219px;
             Height: 350px;
         }
+    .grid-img-fin {
+        padding-top: 32px;
+        padding-bottom: 31px;
     }
-    /*Affichage Ordinateur */
-    @media screen and (min-width: 1280px) {
-        .frame-img .img-fin {
-            Width: 353px;
-            Height: 500px;
-        }
-
+    
         .grid-img-fin:first-child {
-            margin-left: 90px;
+            padding-top: 32px;
+            margin-left: 32px;
         }
-
+    
         .grid-img-fin:last-child {
-            margin-right: 90px;
+            padding-bottom: 31px;
+            margin-right: 33px;
         }
     }
+
+/*Affichage Ordinateur */
+@media screen and (min-width: 1280px) {
+    .frame-img .img-fin {
+        Width: 353px;
+        Height: 500px;
+    }
+
+    .grid-img-fin:first-child {
+        margin-left: 90px;
+    }
+    
+    .grid-img-fin:last-child {
+        margin-right: 90px;
+    }
+}
 
 
 
 .bloc-intro{
-  width : 375 px;
-  height : 236 px;
-  left : 0 px;
-  top : 321 px;
+  width : 375px;
+  height : 236px;
+  left : 0px;
+  top : 321px;
   background-color: #F7F7F7;
 }
 
@@ -619,18 +626,6 @@ body {
 }
 
 
-/* Boutton : taille fixe*/
-.button-bleu { /* ancien about-button*/
-    width: 335px;
-    height: 64px;
-    background-color: #39D6C0;
-    border-radius: 8px;
-    margin-top: 2%;
-    margin-bottom: 8%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 /*Pour les écrans de moins de 335px (bouton sort de l'écran)*/
 @media screen and (max-width : 350px)
 {
@@ -639,19 +634,6 @@ body {
     width : 80%;
   }
 }
-
-    .button-bleu a { /* ancien about-button a */
-        display: block;
-        text-align: center;
-        line-height: center;
-        padding-top: 20px;
-        text-decoration: none;
-        font-weight: 500;
-        letter-spacing: 0em;
-        color: white;
-        font-style: normal;
-    }
-
 
 .about-photo-vélo img {
     width: 100%;
@@ -756,7 +738,7 @@ body {
   font-size: 16px;
 }
 
-/*Version tablette et mobile, footer en ligne*/
+/*Version tablette etmobile, footer en ligne*/
 @media(min-width: 600px)
 {
   .footer 
