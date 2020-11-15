@@ -23,10 +23,10 @@
                 <nav class="nav">
                     <ul class="nav-list">
                         <li class="nav-list-item">
-                            <a href="index.html" class="nav-link nav-link-active">Accueil</a>
+                            <a href="index.html" class="nav-link">Accueil</a>
                         </li>
                         <li class="nav-list-item">
-                            <a href="about-us.html" class="nav-link">Qui sommes-nous ? </a>
+                            <a href="about-us.html" class="nav-link nav-link-active">Qui sommes-nous ? </a>
                         </li>
                         <li class="nav-list-item">
                             <a href="services.html" class="nav-link">Services</a>
@@ -86,10 +86,37 @@
         </section>
     </section>
 
-            <!--"bouton" Nos services"-->
-            <div class="button-bleu">
-                <a href="services.html" class="button"> Nos services</a>
-            </div>
+       .about-button { /* ancien about-button*/
+    width: 335px;
+    height: 64px;
+    background-color: #39D6C0;
+    border-radius: 8px;
+    margin-top: 2%;
+    margin-bottom: 8%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Pour les écrans de moins de 335px (bouton sort de l'écran)*/
+@media screen and (max-width : 350px)
+{
+  .about-button
+  {
+    width : 80%;
+  }
+}
+
+    .about-button { /* ancien about-button a */
+        display: block;
+        text-align: center;
+        line-height: center;
+        padding-top: 20px;
+        text-decoration: none;
+        font-weight: 500;
+        letter-spacing: 0em;
+        color: white;
+        font-style: normal;
+    }
       
 
         <!--Photo vélo-->
